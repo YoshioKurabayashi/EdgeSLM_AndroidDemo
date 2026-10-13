@@ -1,0 +1,36 @@
+{
+  "system_prompt": "あなたは車載アシスタントです。短く答えてください。",
+  "suggestions": [
+    ["エアコンを22度にして", "音楽をかけて", "さっき何度にしたっけ？"],
+    ["富士山の高さは？", "12×8は？", "「おはよう」を英語にして", "What is the capital of France?"]
+  ],
+  "models": [
+    {
+      "key": "1.5b",
+      "label": "1.5B",
+      "sub": "賢い",
+      "desc": "Qwen2.5-1.5B-Instruct · 28層 · 1,481MB",
+      "job": {
+        "model": "models/ops/q15kc28_epctx.onnx",
+        "const_inputs": {"cos_table": "inputs/cos_table_q15_l2048.bin", "sin_table": "inputs/sin_table_q15_l2048.bin"},
+        "embed_table": "models/ops/q15_embed_bf16.bin",
+        "embed_dtype": "bf16",
+        "pos0_kv": "inputs/q15kc28_pos0_kv.bin",
+        "pin_pos0": true,
+        "zero_copy": true
+      }
+    },
+    {
+      "key": "0.5b",
+      "label": "0.5B",
+      "sub": "速い",
+      "desc": "Qwen2.5-0.5B-Instruct · 24層 · 772MB",
+      "job": {
+        "model": "models/ops/qwen_dec24c512_epctx.onnx",
+        "const_inputs": {"cos_table": "inputs/cos_table_l2048.bin", "sin_table": "inputs/sin_table_l2048.bin"},
+        "pin_pos0": true,
+        "zero_copy": true
+      }
+    }
+  ]
+}

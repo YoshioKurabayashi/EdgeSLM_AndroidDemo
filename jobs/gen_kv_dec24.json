@@ -1,0 +1,16 @@
+{
+  "job_id": "gen_kv_dec24",
+  "task": "generate_kv",
+  "model": "models/ops/qwen_dec24_epctx.onnx",
+  "ep": {
+    "provider": "QNN",
+    "backend": "libQnnHtp.so",
+    "options": { "offload_graph_io_quantization": "0", "qnn_context_priority": "high" },
+    "session": { "intra_op_num_threads": 1, "log_severity_level": 3 }
+  },
+  "prompt_ids": [785, 6722, 3283, 315, 6323, 374, 26194, 13, 576, 6722, 3283, 315, 9625, 374],
+  "max_new": 24,
+  "mask_neg": -60.0,
+  "stop_ids": [151645, 151643],
+  "const_inputs": { "cos_table": "inputs/cos_table_l64.bin", "sin_table": "inputs/sin_table_l64.bin" }
+}

@@ -1,0 +1,8 @@
+{
+  "model": "models/ops/qwen_dec24c512_epctx.onnx",
+  "const_inputs": {
+    "cos_table": "inputs/cos_table_l2048.bin",
+    "sin_table": "inputs/sin_table_l2048.bin"
+  },
+  "max_new": 64
+}

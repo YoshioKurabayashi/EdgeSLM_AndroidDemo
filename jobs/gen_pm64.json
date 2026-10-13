@@ -1,0 +1,17 @@
+{
+  "job_id": "gen_pm64",
+  "task": "generate",
+  "model": "models/ops/qwen_pm64_epctx.onnx",
+  "ep": {
+    "provider": "QNN",
+    "backend": "libQnnHtp.so",
+    "options": { "offload_graph_io_quantization": "0", "qnn_context_priority": "high" },
+    "session": { "intra_op_num_threads": 1, "log_severity_level": 3 }
+  },
+  "prompt_ids": [785, 6722, 3283, 315, 6323, 374, 26194, 13, 576, 6722, 3283, 315, 9625, 374],
+  "max_new": 8,
+  "pad_id": 151643,
+  "stop_ids": [151645, 151643],
+  "dynamic_mask": true,
+  "const_inputs": { "cos": "inputs/cos_w64.bin", "sin": "inputs/sin_w64.bin" }
+}

@@ -1,0 +1,15 @@
+{
+  "job_id": "demo_gen",
+  "task": "generate",
+  "model": "models/ops/qwen24ext_epctx.onnx",
+  "ep": {
+    "provider": "QNN",
+    "backend": "libQnnHtp.so",
+    "options": { "offload_graph_io_quantization": "0", "qnn_context_priority": "high" },
+    "session": { "intra_op_num_threads": 1, "log_severity_level": 3 }
+  },
+  "prompt_ids": [785, 6722, 3283, 315, 6323, 374, 26194, 13, 576, 6722, 3283, 315, 9625, 374],
+  "max_new": 6,
+  "pad_id": 151643,
+  "stop_ids": [151645, 151643]
+}

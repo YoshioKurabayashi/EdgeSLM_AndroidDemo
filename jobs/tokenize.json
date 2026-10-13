@@ -1,0 +1,6 @@
+{
+  "job_id": "tok_golden",
+  "task": "tokenize",
+  "tokenizer_dir": "tokenizer",
+  "golden": "golden.jsonl"
+}

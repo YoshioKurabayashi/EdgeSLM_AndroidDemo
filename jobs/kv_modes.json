@@ -1,0 +1,58 @@
+[
+  {
+    "label": "Qwen2.5 KV512",
+    "job": {
+      "model": "models/ops/qwen_dec24c512_epctx.onnx",
+      "const_inputs": {
+        "cos_table": "inputs/cos_table_l2048.bin",
+        "sin_table": "inputs/sin_table_l2048.bin"
+      },
+      "assistant_prefix": "",
+      "pin_pos0": true,
+      "zero_copy": true
+    }
+  },
+  {
+    "label": "Qwen3 KV256",
+    "job": {
+      "model": "models/ops/qwen3_dec28c256_epctx.onnx",
+      "const_inputs": {
+        "cos_table": "inputs/cos_table_q3_l2048.bin",
+        "sin_table": "inputs/sin_table_q3_l2048.bin"
+      },
+      "assistant_prefix": "<think>\n\n</think>\n\n",
+      "probe_ids": [
+        17,
+        38780,
+        57326,
+        57842,
+        75639,
+        89862,
+        99866,
+        101014,
+        104517,
+        125574,
+        127000,
+        135118,
+        136478
+      ],
+      "zero_copy": true
+    }
+  },
+  {
+    "label": "Qwen2.5-1.5B KV256",
+    "job": {
+      "model": "models/ops/q15kc28_epctx.onnx",
+      "const_inputs": {
+        "cos_table": "inputs/cos_table_q15_l2048.bin",
+        "sin_table": "inputs/sin_table_q15_l2048.bin"
+      },
+      "embed_table": "models/ops/q15_embed_bf16.bin",
+      "embed_dtype": "bf16",
+      "pos0_kv": "inputs/q15kc28_pos0_kv.bin",
+      "pin_pos0": true,
+      "assistant_prefix": "",
+      "zero_copy": true
+    }
+  }
+]

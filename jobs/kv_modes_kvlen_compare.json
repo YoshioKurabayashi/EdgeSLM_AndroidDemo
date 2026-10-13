@@ -1,0 +1,46 @@
+[
+  {
+    "label": "KV 512\n22.7 tok/s",
+    "job": {
+      "model": "models/ops/qwen_dec24c512_epctx.onnx",
+      "const_inputs": {
+        "cos_table": "inputs/cos_table_l2048.bin",
+        "sin_table": "inputs/sin_table_l2048.bin"
+      },
+      "max_new": 64
+    }
+  },
+  {
+    "label": "KV 256\n28.2 tok/s",
+    "job": {
+      "model": "models/ops/qwen_dec24c256_epctx.onnx",
+      "const_inputs": {
+        "cos_table": "inputs/cos_table_l2048.bin",
+        "sin_table": "inputs/sin_table_l2048.bin"
+      },
+      "max_new": 48
+    }
+  },
+  {
+    "label": "KV 64\n34.8 tok/s",
+    "job": {
+      "model": "models/ops/qwen_dec24pcc13_epctx.onnx",
+      "const_inputs": {
+        "cos_table": "inputs/cos_table_l2048.bin",
+        "sin_table": "inputs/sin_table_l2048.bin"
+      },
+      "max_new": 32
+    }
+  },
+  {
+    "label": "KV 64\nper-tensor",
+    "job": {
+      "model": "models/ops/qwen_dec24_epctx.onnx",
+      "const_inputs": {
+        "cos_table": "inputs/cos_table_l2048.bin",
+        "sin_table": "inputs/sin_table_l2048.bin"
+      },
+      "max_new": 32
+    }
+  }
+]

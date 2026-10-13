@@ -1,0 +1,11 @@
+{
+  "model": "models/ops/qwen_pm64pcc13_epctx.onnx",
+  "dynamic_mask": true,
+  "mask_input": "attn_mask",
+  "mask_neg": -60.0,
+  "const_inputs": {
+    "cos": "inputs/cos_w64.bin",
+    "sin": "inputs/sin_w64.bin"
+  },
+  "max_new": 32
+}
